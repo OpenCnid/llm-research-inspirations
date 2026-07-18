@@ -61,7 +61,7 @@ into this frame.
 ## From Sparse to Dense: GPT-4 Summarization with Chain of Density Prompting — Adams et al., 2023
 
 - **paper:** [arXiv:2309.04269](https://arxiv.org/abs/2309.04269) (pinned v1, 2023-09-08) · [published version](https://aclanthology.org/2023.newsum-1.7/)
-- **our note:** [chain-of-density / cod.md](https://github.com/OpenCnid/chain-of-density/blob/main/cod.md)
+- **our note:** [chain-of-density / density-chain.md](https://github.com/OpenCnid/chain-of-density/blob/main/density-chain.md)
 - **what it shaped:** [chain-of-density](https://github.com/OpenCnid/chain-of-density) — the repo itself, and the note format every paper repo after it will use
 - **the receipt:** [METHOD.md](https://github.com/OpenCnid/chain-of-density/blob/main/METHOD.md) and the five-tier structure of the note
 
