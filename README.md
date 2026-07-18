@@ -56,7 +56,7 @@ into this frame.
 
 ## The entries
 
-*(One so far. Rome, a day — you know how this goes.)*
+*(Two so far. Rome, a day — you know how this goes.)*
 
 ## From Sparse to Dense: GPT-4 Summarization with Chain of Density Prompting — Adams et al., 2023
 
@@ -73,6 +73,23 @@ shipping only the densest, and its low annotator agreement (Fleiss' κ = 0.112)
 is why the reader, not the writer, picks the tier. We adapted rather than
 adopted: ~150-word tiers instead of ~70, entities broadened to ablations and
 limitations, and a locator citation on every claim.
+
+## Polymorphic Combinatorial Frameworks (PCF) — Pearl, Murphy & Intriligator, 2025
+
+- **paper:** [arXiv:2508.01581](https://arxiv.org/abs/2508.01581) (pinned v1, 2025-08-03)
+- **our note:** [pcf-adaptive-agents / density-chain.md](https://github.com/OpenCnid/pcf-adaptive-agents/blob/main/density-chain.md)
+- **what it shaped:** the structural-prompting and hypershot protocols our authoring pipeline mandates — reaching us through co-author Matthew Murphy's Lexideck curriculum, of which PCF is the peer-reviewed formalization
+- **the receipt:** the [density-chain skill](https://github.com/OpenCnid/chain-of-density/blob/main/.claude/skills/density-chain/SKILL.md) and the [batch handoff prompt](https://github.com/OpenCnid/chain-of-density/blob/main/prompts/batch-run-handoff.md), both of which instruct every authoring session to load those protocols before writing a word
+
+Full disclosure first: [Matthew Murphy](https://github.com/gusthemole) is a
+friend of the lab and a collaborator on our current project, and the
+influence here predates the paper. His Lexideck prompt-engineering
+curriculum is the direct ancestor of the structural-prompting and hypershot
+protocols wired into our harness — our methodology repo literally instructs
+every authoring session to load them before writing a word. PCF is that line
+of work grown up and peer-reviewed: topos theory doing formally what our
+templates enforce by convention. We'd have studied this paper anyway;
+knowing an author just means we say so.
 
 ## License
 
