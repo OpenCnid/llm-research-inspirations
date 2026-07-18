@@ -7,9 +7,11 @@
 > design doc, or a shipped feature that exists because of a paper, the paper
 > doesn't get an entry. Admiration is free; entries are earned.
 
-**This repo holds interpretations, on purpose.** The facts live next door in
-[llm-research-notes](https://github.com/OpenCnid/llm-research-notes), our
-chain-of-density notes collection, and the papers themselves outrank everything. Authority runs
+**This repo holds interpretations, on purpose.** The facts live in each
+paper's own repo — every paper we read gets one, named after the paper so the
+people searching for the research can find it, starting with
+[chain-of-density](https://github.com/OpenCnid/chain-of-density) — and the
+papers themselves outrank everything. Authority runs
 one direction — **paper → note → entry** — so nothing here is ever evidence for
 anything except what *we* did about it.
 
@@ -22,7 +24,7 @@ into this frame.
 ## {Paper_Title} — {Lab_Or_First_Author_And_Year}
 
 - **paper:** {Canonical_Link_With_Pinned_Version}
-- **our note:** {Link_Into_The_Notes_Repo}
+- **our note:** {Link_To_The_Note_In_The_Papers_Own_Repo}
 - **what it shaped:** {OpenCnid_Repo_Or_Feature_Link}
 - **the receipt:** {Commit_PR_Design_Doc_Or_Shipped_Feature_That_Exists_Because_Of_It}
 
@@ -38,7 +40,7 @@ into this frame.
   lab knows we exist, let alone approves of what we built with it. We say this
   once here so no entry has to.
 - **Their science, our reading.** If an entry misstates a finding, the fix goes
-  in source-first: correct the note in llm-research-notes, then the entry here. Open an
+  in source-first: correct the note in the paper's repo, then the entry here. Open an
   issue; corrections are the fastest PRs we merge.
 - **Gratitude, not marketing.** Entries say what changed in our work, not how
   great we are for having read a paper.
@@ -48,11 +50,11 @@ into this frame.
 ## From Sparse to Dense: GPT-4 Summarization with Chain of Density Prompting — Adams et al., 2023
 
 - **paper:** [arXiv:2309.04269](https://arxiv.org/abs/2309.04269) (pinned v1, 2023-09-08) · [published version](https://aclanthology.org/2023.newsum-1.7/)
-- **our note:** [llm-research-notes / 2023-chain-of-density](https://github.com/OpenCnid/llm-research-notes/blob/main/notes/columbia-salesforce/2023-chain-of-density/cod.md)
-- **what it shaped:** [llm-research-notes](https://github.com/OpenCnid/llm-research-notes) — the entire repo
-- **the receipt:** [METHOD.md](https://github.com/OpenCnid/llm-research-notes/blob/main/METHOD.md) and the five-tier structure of every note in the collection
+- **our note:** [chain-of-density / cod.md](https://github.com/OpenCnid/chain-of-density/blob/main/cod.md)
+- **what it shaped:** [chain-of-density](https://github.com/OpenCnid/chain-of-density) — the repo itself, and the note format every paper repo after it will use
+- **the receipt:** [METHOD.md](https://github.com/OpenCnid/chain-of-density/blob/main/METHOD.md) and the five-tier structure of the note
 
-This paper is why llm-research-notes exists and why it looks the way it does. Its
+This paper is why our paper repos look the way they do. Its
 fixed-length constraint became the engine of our note format — without it,
 "add detail" makes summaries longer, never denser. Its human-preference result
 (median preferred step three, not five) is why we keep every tier instead of
