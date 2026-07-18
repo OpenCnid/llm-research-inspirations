@@ -71,12 +71,14 @@ uncertainty-around-facts managed by an adaptive four-judge layer.* Unpacked,
 that is four load-bearing pieces, and each paper on this shelf attaches to at
 least one:
 
-- **The engine** — a code-mediated text substrate
-  ([CODE_MEDIATED_TEXT.md](https://github.com/OpenCnid/trellis/blob/master/docs/architecture/CODE_MEDIATED_TEXT.md)):
-  the model never counts and never copies; working state lives in queryable
-  REPL structures, addresses are engine-computed, splices are hash-guarded.
-  The design bet is that externalizing state into the harness beats holding
-  it in attention.
+- **The engine** — a Recursive Language Model runtime (the MIT CSAIL
+  formulation) over a code-mediated text substrate
+  ([ARCHITECTURE.md](https://github.com/OpenCnid/trellis/blob/master/docs/architecture/ARCHITECTURE.md),
+  [CODE_MEDIATED_TEXT.md](https://github.com/OpenCnid/trellis/blob/master/docs/architecture/CODE_MEDIATED_TEXT.md)):
+  the prompt and working state live in a REPL environment the model
+  programmatically walks — the model never counts and never copies;
+  addresses are engine-computed, splices are hash-guarded. The design bet is
+  that externalizing state into the harness beats holding it in attention.
 - **The harness** — the adaptive scaffolding around the model: tools,
   budgets, typed refusals, deterministic guards. House doctrine, measured
   before it was doctrine: *tooling shape enforces; prompts reinforce* —
@@ -98,6 +100,7 @@ The shelf, mapped:
 ```mermaid
 flowchart LR
     subgraph shelf["📚 the shelf"]
+        RLM["Recursive<br/>Language Models"]
         BH["Better Harnesses,<br/>Smaller Models"]
         WG["Who Grades<br/>the Grader?"]
         WS["Global Workspace<br/>(J-lens)"]
@@ -107,14 +110,16 @@ flowchart LR
     end
     subgraph trellis["🌿 Trellis"]
         purpose["purpose statement<br/><i>adopted as guide</i>"]
+        engine["RLM runtime +<br/>code-mediated text engine<br/><i>caused + validated</i>"]
         judges["four-judge layer<br/>+ composable rubrics<br/><i>caused</i>"]
-        engine["code-mediated<br/>text engine<br/><i>validated</i>"]
         doctrine["tooling-over-prompt<br/>doctrine<br/><i>mechanism candidate</i>"]
         sidecar["residual-stream<br/>sidecar<br/><i>caused</i>"]
     end
     subgraph meta["🗂 the shelf itself"]
         notes["note format +<br/>authoring protocols"]
     end
+    RLM --> engine
+    RLM --> purpose
     BH --> purpose
     WG --> judges
     WS -.-> engine
@@ -125,19 +130,21 @@ flowchart LR
     PCF --> notes
 ```
 
-Read as a whole, the four 2026 papers divide the same problem between them.
-The harness paper says *where capability should live* (lift shared difficulty
-out of the model); the grader paper says *how to trust the thing that scores
-it* (anchor the metric, audit from outside); the two interpretability papers
-say *what the model is doing underneath* (a small verbalizable workspace does
+Read as a whole, the shelf divides one problem among five papers. The RLM
+paper supplies *the substrate* — the prompt as environment, walked with code,
+recursed over programmatically — and everything else wraps it. The harness
+paper says *where capability should live* (lift shared difficulty out of the
+model); the grader paper says *how to trust the thing that scores it*
+(anchor the metric, audit from outside); the two interpretability papers say
+*what the model is doing underneath* (a small verbalizable workspace does
 the flexible reasoning, and concept-level directions in it causally steer
-behavior). Trellis is one wager on all four at once: an engine that
+behavior). Trellis is one wager on all five at once: an RLM engine that
 externalizes state (which the workspace paper's own externalization result
-supports), a harness that closes failure classes structurally (which the
-dissociation result gives a mechanism for), a judge layer built the way the
-grader paper says graders survive (anchors it must predict, anchors it never
-sees, an outside audit), and a sidecar that wants to instrument the
-representations the interpretability papers found. The mechinterp half of the
+independently supports), a harness that closes failure classes structurally
+(which the dissociation result gives a mechanism for), a judge layer built
+the way the grader paper says graders survive (anchors it must predict,
+anchors it never sees, an outside audit), and a sidecar that wants to
+instrument the representations the interpretability papers found. The mechinterp half of the
 shelf also rides one shared, explicitly-marked empirical bet: that
 concept-level structure in the residual stream is decomposable and stable
 enough to instrument. Our register keeps that marked as extrapolation until
@@ -145,7 +152,7 @@ we measure it — testing the bet is part of the program, not a footnote to it.
 
 ## The entries
 
-*(Six so far. Rome, a day — you know how this goes.)*
+*(Seven so far. Rome, a day — you know how this goes.)*
 
 ## From Sparse to Dense: GPT-4 Summarization with Chain of Density Prompting — Adams et al., 2023
 
@@ -181,6 +188,56 @@ every authoring session to load them before writing a word. PCF is that line
 of work grown up and peer-reviewed: topos theory doing formally what our
 templates enforce by convention. We'd have studied this paper anyway;
 knowing an author just means we say so.
+
+## Recursive Language Models — Zhang, Kraska & Khattab (MIT CSAIL), 2025
+
+- **paper:** [arXiv:2512.24601](https://arxiv.org/abs/2512.24601) (pinned v3, 2026-05-11; v1 2025-12-31) · [authors' code](https://github.com/alexzhang13/rlm)
+- **our note:** [recursive-language-models / density-chain.md](https://github.com/OpenCnid/recursive-language-models/blob/main/density-chain.md)
+- **what it shaped:** [Trellis](https://github.com/OpenCnid/trellis), whole — the runtime *is* this formulation, implemented
+- **the receipt:** the root statement of [ARCHITECTURE.md](https://github.com/OpenCnid/trellis/blob/master/docs/architecture/ARCHITECTURE.md) ("Trellis as a Recursive Language Model runtime" is the root), the [GLOSSARY](https://github.com/OpenCnid/trellis/blob/master/docs/GLOSSARY.md) entry that defines "RLM" by pointing at this paper, Axiom 1′ of [WORKSPACE_AND_MODULES.md](https://github.com/OpenCnid/trellis/blob/master/docs/architecture/WORKSPACE_AND_MODULES.md), and the "RLM depth" half of the HANDOFF purpose statement
+- **kind of influence:** caused — the deepest receipt possible: the project is the implementation
+
+Every other entry on this shelf shaped a component; this paper shaped the
+noun. A Recursive Language Model treats the prompt as an external environment
+— a variable in a persistent REPL that the model walks with code, calling
+itself recursively over programmatic slices — while presenting an ordinary
+string-in, string-out interface. Trellis is that inversion built out as a
+runtime: the reasoning engine is an RLM by name, our glossary's definition of
+the term is a citation to this paper, and our test-time-training doctrine
+file lists it as reference number one with the annotation that everything
+else would live *under* it.
+
+**In Trellis, specifically:**
+
+- **The engine is the formulation.** [FLYWHEEL_EXPLAINER.md](https://github.com/OpenCnid/trellis/blob/master/docs/benchmarks/FLYWHEEL_EXPLAINER.md)
+  opens by defining the MIT CSAIL RLM — a model given a Python REPL and
+  `llm_query()` self-calls, chunking and fanning out over corpora too large
+  for one window — because that is the machine whose economics the flywheel
+  measures. Our benchmarking runs
+  [OOLONG-Pairs](https://github.com/OpenCnid/trellis/blob/master/docs/benchmarks/OOLONG_BENCHMARK_REPORT.md),
+  the pairwise-aggregation task from this paper's own evaluation line, against
+  our runtime.
+- **Code-mediated text is the inversion, hardened.** The paper's key design
+  choice — the prompt never enters the context window; the model gets a
+  symbolic handle and builds intermediate values in variables — is what our
+  [CODE_MEDIATED_TEXT.md](https://github.com/OpenCnid/trellis/blob/master/docs/architecture/CODE_MEDIATED_TEXT.md)
+  pillar turns into enforced law: the model never counts, never copies;
+  addresses are engine-computed; splices are hash-guarded. The paper supplies
+  the paradigm; the pillar supplies the guardrails the paper's §7 says are
+  underexplored.
+- **The findings we operate by.** Depth-0 already beating agent scaffolds
+  (the REPL is load-bearing; recursion is a multiplier), the
+  first-decomposition effect, and syntax errors compounding through sub-call
+  depth — our note flags all three as production advice, and the last one is
+  a standing argument for our engine owning structure instead of trusting
+  model-written string manipulation.
+- **The lineage runs through the whole map.** The purpose statement reads
+  "Trellis = RLM depth × the best, most adaptive harness" — this paper is
+  the first factor, the harness paper (next entry) the second, and the
+  workspace paper's externalization result (two entries down) later provided
+  independent mechanistic support for why prompt-as-environment works at
+  all. One substrate, externally corroborated, economically framed, judged
+  from outside: that's the shelf in one sentence.
 
 ## Better Harnesses, Smaller Models: Building 90% Cheaper Agents via Automated Harness Adaptation — Yang, Zhao, Wu & Kästner (CMU), 2026
 
