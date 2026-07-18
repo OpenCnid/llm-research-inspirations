@@ -17,7 +17,7 @@
 > doesn't get an entry. Admiration is free; entries are earned.
 
 **This repo holds interpretations, on purpose.** The facts live in each
-paper's own repo — every paper we read gets one, named after the paper so the
+paper's own repo — every paper we study gets one, named after the paper so the
 people searching for the research can find it, starting with
 [chain-of-density](https://github.com/OpenCnid/chain-of-density) — and the
 papers themselves outrank everything. Authority runs one direction —
