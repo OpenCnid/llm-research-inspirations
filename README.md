@@ -56,7 +56,7 @@ into this frame.
 
 ## The entries
 
-*(Two so far. Rome, a day — you know how this goes.)*
+*(Four so far. Rome, a day — you know how this goes.)*
 
 ## From Sparse to Dense: GPT-4 Summarization with Chain of Density Prompting — Adams et al., 2023
 
@@ -90,6 +90,40 @@ every authoring session to load them before writing a word. PCF is that line
 of work grown up and peer-reviewed: topos theory doing formally what our
 templates enforce by convention. We'd have studied this paper anyway;
 knowing an author just means we say so.
+
+## Emotion Concepts and their Function in a Large Language Model — Sofroniew et al. (Anthropic), 2026
+
+- **paper:** [Transformer Circuits Thread](https://transformer-circuits.pub/2026/emotions/index.html) (published 2026-04-02) · [arXiv:2604.07729](https://arxiv.org/abs/2604.07729) (pinned v1, 2026-04-09)
+- **our note:** [emotion-concepts-in-llms / density-chain.md](https://github.com/OpenCnid/emotion-concepts-in-llms/blob/main/density-chain.md)
+- **what it shaped:** the residual-stream sidecar direction in [Trellis](https://github.com/OpenCnid/trellis) — activation-level monitoring as a first-class future project
+- **the receipt:** [RESIDUAL_STREAM_SIDECAR.md](https://github.com/OpenCnid/trellis/blob/master/docs/architecture/RESIDUAL_STREAM_SIDECAR.md), the ratified design record built on this paper's findings
+
+This paper turned "models under pressure do bad things" into an instrument
+reading: emotion concepts are linear, causal, dose-responsive directions, and
+turning the desperation dial moves blackmail and reward-hacking rates. Our
+sidecar design record exists because of that chain — its foundations section
+walks the paper's findings one by one, and its monitoring ambitions grow from
+the paper's own suggestion to watch for extreme activations. The authors'
+claim that the methodology is not emotion-specific is the extrapolation our
+sidecar bet rides on; our records mark it as extrapolated, not measured,
+which is exactly the honesty this paper models.
+
+## Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents — Zhang et al., 2026
+
+- **paper:** [arXiv:2607.12790](https://arxiv.org/abs/2607.12790) (pinned v1, 2026-07-14)
+- **our note:** [who-grades-the-grader-pdf / density-chain.md](https://github.com/OpenCnid/who-grades-the-grader-pdf/blob/main/density-chain.md)
+- **what it shaped:** the judge-harness program in [Trellis](https://github.com/OpenCnid/trellis) — the epistemic-support layer's composable-rubrics direction, and its anchor-first safety doctrine
+- **the receipt:** [COMPOSABLE_RUBRICS_DESIGN.md](https://github.com/OpenCnid/trellis/blob/master/docs/product/epistemic-support/COMPOSABLE_RUBRICS_DESIGN.md), a design record that exists to reconstruct this paper's rubric-and-outcome machinery, with the paper registered as source S1 in [RESEARCH_MAP.md](https://github.com/OpenCnid/trellis/blob/master/docs/product/epistemic-support/RESEARCH_MAP.md)
+
+The nearest prior art to our judge-harness program, published days before we
+read it. Its ablation result — anchor discipline is the load-bearing safety
+guard for evolved evaluators, while lifecycle hygiene buys efficiency —
+validated the calibration-anchor doctrine our judging architecture was
+already organized around, and its typed drawback detectors are the raw
+material our composable-rubrics design sets out to reconstruct. Its Goodhart
+episode (metric gamed, outside judge catches it, one detector repairs it,
+then the judge itself needs auditing) is the failure-expecting posture we
+want our own panels held to.
 
 ## License
 
