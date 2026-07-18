@@ -1,6 +1,15 @@
-# llm-research-inspirations
+<div align="center">
+
+<img src="assets/banner.svg" width="100%" alt="llm-research-inspirations: their paper flows to our note flows to our work, receipts attached, never backwards">
 
 *The map from the research we admire to the things we built because of it.*
+
+[![license](https://img.shields.io/badge/license-CC_BY_4.0-3b7ddd)](LICENSE.md)
+![receipts](https://img.shields.io/badge/receipts-required-2ea44f)
+![implied endorsement](https://img.shields.io/badge/implied_endorsement-none-orange)
+![hype](https://img.shields.io/badge/hype-rejected_in_review-red)
+
+</div>
 
 > **The recognition layer.** Every entry names a paper, the OpenCnid repo or
 > feature it shaped, and why — with receipts. If we can't point at a commit, a
@@ -11,9 +20,9 @@
 paper's own repo — every paper we read gets one, named after the paper so the
 people searching for the research can find it, starting with
 [chain-of-density](https://github.com/OpenCnid/chain-of-density) — and the
-papers themselves outrank everything. Authority runs
-one direction — **paper → note → entry** — so nothing here is ever evidence for
-anything except what *we* did about it.
+papers themselves outrank everything. Authority runs one direction —
+**paper → note → entry** — so nothing here is ever evidence for anything
+except what *we* did about it.
 
 ## Entry format
 
@@ -40,12 +49,14 @@ into this frame.
   lab knows we exist, let alone approves of what we built with it. We say this
   once here so no entry has to.
 - **Their science, our reading.** If an entry misstates a finding, the fix goes
-  in source-first: correct the note in the paper's repo, then the entry here. Open an
-  issue; corrections are the fastest PRs we merge.
+  in source-first: correct the note in the paper's repo, then the entry here.
+  Open an issue; corrections are the fastest PRs we merge.
 - **Gratitude, not marketing.** Entries say what changed in our work, not how
   great we are for having read a paper.
 
 ## The entries
+
+*(One so far. Rome, a day — you know how this goes.)*
 
 ## From Sparse to Dense: GPT-4 Summarization with Chain of Density Prompting — Adams et al., 2023
 
@@ -66,3 +77,9 @@ limitations, and a locator citation on every claim.
 ## License
 
 [CC BY 4.0](LICENSE.md) © OpenCnid Labs.
+
+---
+
+<div align="center">
+<sub>The entries are earned. The jokes are free.</sub>
+</div>
