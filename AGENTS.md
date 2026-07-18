@@ -26,6 +26,9 @@ papers themselves outrank everything.
   that exists because of the paper. No receipt, no entry.
 - Use the entry-format frame in the README (bracketed names are generation
   instructions, not literal text).
+- Label the kind of influence (caused / adopted as guide / validated /
+  avenue — see House rules). Never let validation masquerade as causation:
+  if the artifact predates the paper, the entry says so.
 - Corrections land source-first: fix the note in the paper's repo, then the
   entry here.
 
